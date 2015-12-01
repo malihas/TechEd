@@ -1,3 +1,5 @@
+package src;
+
 import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
@@ -188,7 +190,16 @@ public class Calculator extends JFrame implements ActionListener {
     public void getPosNeg() {
         // TODO: Group 10: Negative Sign: Add/Remove the negative sign after user hits +/-.
         try {
-            throw new Exception();
+            //throw new Exception();
+        	if (display.getText().startsWith("-")){
+        		String number = display.getText();
+        		
+        		display.setText(number.substring(1, number.length()));
+        	}
+        	else
+        	{
+        		display.setText("-" + display.getText());
+        	}
         } catch(NumberFormatException e) {
         } catch(Exception e) {
         }
